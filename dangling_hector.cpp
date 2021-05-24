@@ -72,15 +72,14 @@ void PositionCallback(const sensor_msgs::LaserScan::ConstPtr& p_msg)
 	 	if ( p_msg->ranges[min] > p_msg->ranges[i] ) 
 	 	{
 	 		min = i;
-			//ROS_INFO("ich bin in der if");
 	 	}
 	 }
 	}
 	ROS_INFO("Minimum value: %f",p_msg->ranges[min]);
 	ROS_INFO("Minimum position: %f",min);
-	if(p_msg->ranges[0] < 10)
+	if(p_msg->ranges[min] < 2)
 	{
-		BuiltTwistMsg(0.5, 0.0, 0.0, 0.0, 0.0, 1, msg_twist);
+		BuiltTwistMsg(0.3, 0.0, 0.0, 0.0, 0.0, 2, msg_twist);
 	}
 	
 	else

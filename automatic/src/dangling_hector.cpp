@@ -164,7 +164,7 @@ void PositionCallback(const sensor_msgs::LaserScan::ConstPtr& p_msg)
 			}
 			else
 			{
-				BuiltTwistMsg(0.25, 0.0, 0.0, 0.0, 0.0, 0.0, msg_twist);
+				BuiltTwistMsg(0.45, 0.0, 0.0, 0.0, 0.0, 0.0, msg_twist);
 				dir = straight;
 				counter = 0;
 			}
